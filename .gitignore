@@ -1,6 +1,7 @@
 # PyCharm
+# IDEA配置
 .idea/
-
+*.iml
 # Python
 __pycache__/
 *.py[cod]
