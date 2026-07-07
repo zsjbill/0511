@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8903c6e-b7bc-4b03-9cd1-9fee1c8f1370" name="更改" comment="增加口号" />
+    <list default="true" id="c8903c6e-b7bc-4b03-9cd1-9fee1c8f1370" name="更改" comment="增加组名">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0511/test0707.py" beforeDir="false" afterPath="$PROJECT_DIR$/0511/test0707.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,23 +41,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000215791864375" />
-      <entry key="MS500" value="1.116629123942101" />
-      <entry key="S2" value="1.5843886242806229" />
-      <entry key="S5" value="1.8066417592221287" />
-      <entry key="S10" value="1.8981324517605942" />
-      <entry key="S30" value="1.9765516359974922" />
-      <entry key="S60" value="2.2546655506107625" />
-      <entry key="M2" value="3.3635196821134965" />
-      <entry key="M5" value="6.072361782618346" />
-      <entry key="M10" value="8.67543723790363" />
-      <entry key="M15" value="10.146644843825682" />
-      <entry key="M30" value="12.165721713185699" />
-      <entry key="H1" value="13.459470698603386" />
-      <entry key="H2" value="14.195676843326915" />
-      <entry key="H4" value="14.58888410452941" />
-      <entry key="D1" value="14.930197774471178" />
-      <entry key="W1" value="14.989996309850238" />
+      <entry key="MS100" value="1.0306068843148652" />
+      <entry key="MS500" value="1.5086243175281007" />
+      <entry key="S2" value="2.377171522469184" />
+      <entry key="S5" value="3.114082620062637" />
+      <entry key="S10" value="3.502755412999594" />
+      <entry key="S30" value="3.8203552929330096" />
+      <entry key="S60" value="3.9087941218496933" />
+      <entry key="M2" value="4.007485353379634" />
+      <entry key="M5" value="4.891735792914359" />
+      <entry key="M10" value="6.327809272844388" />
+      <entry key="M15" value="7.193951276997028" />
+      <entry key="M30" value="8.378787503243739" />
+      <entry key="H1" value="9.125957630337789" />
+      <entry key="H2" value="9.545849956162058" />
+      <entry key="H4" value="9.768472909585137" />
+      <entry key="D1" value="9.960778842639067" />
+      <entry key="W1" value="9.994381268943734" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -69,23 +79,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.2606202023894814" />
-      <entry key="MS500" value="0.8464291681968962" />
-      <entry key="S2" value="1.470490609347183" />
-      <entry key="S5" value="1.7524128949270006" />
-      <entry key="S10" value="1.8692236673260945" />
-      <entry key="S30" value="1.966457634874517" />
-      <entry key="S60" value="2.2492691032289915" />
-      <entry key="M2" value="3.3601170001924343" />
-      <entry key="M5" value="6.070371743594248" />
-      <entry key="M10" value="8.67422511451384" />
-      <entry key="M15" value="10.145771665578765" />
-      <entry key="M30" value="12.165246396443916" />
-      <entry key="H1" value="13.459221910470518" />
-      <entry key="H2" value="14.195549453464663" />
-      <entry key="H4" value="14.588819631577545" />
-      <entry key="D1" value="14.93018691833079" />
-      <entry key="W1" value="14.989994756228649" />
+      <entry key="MS100" value="0.36316385505725685" />
+      <entry key="MS500" value="1.2466867969446103" />
+      <entry key="S2" value="2.2594180336660528" />
+      <entry key="S5" value="3.047831284980317" />
+      <entry key="S10" value="3.464505862181533" />
+      <entry key="S30" value="3.806202366264945" />
+      <entry key="S60" value="3.901522816058893" />
+      <entry key="M2" value="4.003794748410549" />
+      <entry key="M5" value="4.890217015368772" />
+      <entry key="M10" value="6.327022561605411" />
+      <entry key="M15" value="7.193416147975175" />
+      <entry key="M30" value="8.378512725163821" />
+      <entry key="H1" value="9.125817979802937" />
+      <entry key="H2" value="9.545779496963174" />
+      <entry key="H4" value="9.768437512117627" />
+      <entry key="D1" value="9.960772918908646" />
+      <entry key="W1" value="9.994380422093837" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -93,6 +103,7 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3GAtVCUjBahfruWyeZMSQDQ7gCa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -146,41 +157,32 @@
       <option name="project" value="LOCAL" />
       <updated>1783427679586</updated>
     </task>
-    <task id="LOCAL-00003" summary="增加口号">
+    <task id="LOCAL-00003" summary="增加组名">
       <option name="closed" value="true" />
-      <created>1783428320454</created>
+      <created>1783429561196</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1783428320454</updated>
+      <updated>1783429561196</updated>
     </task>
-    <task id="LOCAL-00004" summary="增加口号">
+    <task id="LOCAL-00004" summary="增加组名">
       <option name="closed" value="true" />
-      <created>1783428566492</created>
+      <created>1783429606426</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1783428566492</updated>
+      <updated>1783429606426</updated>
     </task>
-    <task id="LOCAL-00005" summary="增加口号">
-      <option name="closed" value="true" />
-      <created>1783429582627</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1783429582627</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/ceshi'" />
     <MESSAGE value="增加组名" />
-    <MESSAGE value="解决合并冲突" />
-    <MESSAGE value="增加口号" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加口号" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加组名" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -189,11 +191,6 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/0511/test0707.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
