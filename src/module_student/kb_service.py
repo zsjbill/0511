@@ -1,3 +1,9 @@
+"""知识库搜索服务模块 — MySQL FULLTEXT 全文检索。
+
+使用 jieba 分词对查询语句进行切词，
+通过 MySQL FULLTEXT 索引执行全文检索。
+"""
+
 import logging
 from sqlalchemy import text
 from src.common.database import student_async_engine
@@ -6,7 +12,16 @@ logger = logging.getLogger(__name__)
 
 
 async def search_kb(query: str, top_k: int = 5) -> list[dict]:
-    """Search kb_documents using MySQL FULLTEXT index with jieba tokenization."""
+    """搜索知识库文档（kb_documents 表）。
+
+    搜索流程：
+    1. 使用 jieba 对查询语句进行分词
+    2. 分词结果用空格拼接后作为全文搜索查询词
+    3. 通过 MySQL MATCH ... AGAINST 执行全文检索
+    4. 按相关性得分降序排列，返回 top_k 条结果
+
+    返回字段：title（标题）、score（相关性得分）、content_snippet（内容摘要前200字）
+    """
     try:
         import jieba
         tokens = list(jieba.cut(query))

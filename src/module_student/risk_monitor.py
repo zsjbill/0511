@@ -1,3 +1,9 @@
+"""心理风险监测模块 — 检测学生对话中的心理风险信号。
+
+调用大模型分析对话内容，识别高/中/低风险级别。
+中高风险自动创建预警记录并通知辅导员。
+"""
+
 import json, logging
 from src.common.llm_client import llm_client
 from src.common.database import StudentSessionLocal
@@ -24,16 +30,27 @@ Risk indicators:
 
 
 async def detect_risk(student_id: str, student_name: str, conversation_text: str) -> dict:
+    """检测学生对话中的心理风险信号。
+
+    调用大模型分析对话内容，识别高/中/低风险级别。
+    中高风险自动创建预警记录并通知辅导员。
+
+    返回包含 risk_level、confidence、key_signals、
+    recommended_action 和 alert_created 字段的字典。
+    """
     messages = [
         {"role": "system", "content": RISK_PROMPT},
         {"role": "user", "content": conversation_text},
     ]
+    # 调用大模型，较低温度（0.2）以确保分析结果的一致性
     response = await llm_client.chat(messages, temperature=0.2, max_tokens=512)
     try:
         result = json.loads(response.strip())
     except json.JSONDecodeError:
+        # 解析失败时默认返回低风险
         return {"risk_level": "low", "confidence": 0.0, "key_signals": [], "recommended_action": "Parse error", "alert_created": False}
 
+    # 中高风险自动创建预警记录并通知辅导员
     alert_created = False
     if result.get("risk_level") in ("medium", "high"):
         try:
@@ -47,11 +64,12 @@ async def detect_risk(student_id: str, student_name: str, conversation_text: str
                 await db.commit()
                 await db.refresh(alert)
 
+            # 通知所有辅导员
             await create_notification(
                 recipient_id="counselor_all", recipient_type="teacher",
                 type="risk_alert",
-                title=f"Risk Alert: {student_name} ({result['risk_level']})",
-                content=f"Signals: {', '.join(result.get('key_signals', []))}\nAction: {result.get('recommended_action', '')}",
+                title=f"风险预警：{student_name}（{result['risk_level']}）",
+                content=f"信号：{', '.join(result.get('key_signals', []))}\n建议：{result.get('recommended_action', '')}",
                 related_id=alert.id,
             )
             alert_created = True
