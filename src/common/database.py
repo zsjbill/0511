@@ -16,7 +16,7 @@ enterprise_async_engine = create_async_engine(
     settings.ENTERPRISE_DB_URL,
     pool_size=10,
     max_overflow=20,
-    pool_pre_ping=True,
+    pool_pre_ping=False,
 )
 EnterpriseSessionLocal = async_sessionmaker(
     bind=enterprise_async_engine,
@@ -41,7 +41,7 @@ student_async_engine = create_async_engine(
     settings.STUDENT_DB_URL,
     pool_size=10,
     max_overflow=20,
-    pool_pre_ping=True,
+    pool_pre_ping=False,
 )
 StudentSessionLocal = async_sessionmaker(
     bind=student_async_engine,
