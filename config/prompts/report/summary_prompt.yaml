@@ -1,0 +1,23 @@
+# Report Generation - Summary Prompt
+summary:
+  description: "生成日报/周报/月报摘要"
+
+  daily_report: |
+    请根据以下数据生成今日运营日报摘要：
+
+    今日数据：
+    - 新咨询量：{new_inquiries}
+    - 有效对话数：{effective_conversations}
+    - 报名转化：{registrations}
+    - 投诉数量：{complaints}
+    - 异常事件：{incidents}
+
+    要求：简洁明了，突出关键指标变化，200字以内。
+
+  weekly_report: |
+    请根据以下数据生成本周运营周报摘要：
+    ...
+
+  monthly_report: |
+    请根据以下数据生成本月运营月报摘要：
+    ...

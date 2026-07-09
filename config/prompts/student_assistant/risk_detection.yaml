@@ -1,0 +1,38 @@
+# Student Assistant - Risk Detection Prompt (心理风险识别)
+risk_detection:
+  description: "识别学生对话中的心理风险信号"
+  risk_levels:
+    - level: "low"
+      label: "一般关注"
+      indicators:
+        - "学业压力表达"
+        - "偶尔的负面情绪"
+      action: "记录并定期回访"
+    - level: "medium"
+      label: "重点关注"
+      indicators:
+        - "频繁表达焦虑/抑郁"
+        - "社交回避倾向"
+        - "成绩显著下滑讨论"
+      action: "通知辅导员介入"
+    - level: "high"
+      label: "紧急干预"
+      indicators:
+        - "自伤/自杀倾向表达"
+        - "极端绝望言论"
+        - "明确的人身安全威胁"
+      action: "立即启动危机干预流程"
+
+  prompt_template: |
+    请分析以下学生对话，评估心理风险等级：
+
+    学生对话：
+    {conversation}
+
+    请输出JSON格式：
+    {{
+      "risk_level": "low|medium|high",
+      "confidence": 0.0-1.0,
+      "key_signals": [],
+      "recommended_action": ""
+    }}

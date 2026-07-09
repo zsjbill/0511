@@ -2,7 +2,7 @@
 Knowledge Base Search Tests — 3 tests for KB search functionality.
 """
 import pytest
-from src.module_student.kb_service import search_kb
+from src.module_student.service.kb import search_kb
 
 
 class TestKBSearch:

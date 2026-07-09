@@ -2,7 +2,7 @@
 NL2SQL Engine Tests — 10 security tests (no LLM, fast) + 10 integration tests (require LLM).
 """
 import pytest
-from src.module_enterprise.nl2sql_engine import NL2SQLEngine
+from src.module_enterprise.service.nl2sql_engine import NL2SQLEngine
 
 
 # ─── Security Tests (no LLM needed) ─────────────────────────────────────────

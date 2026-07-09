@@ -2,8 +2,8 @@
 Approval Workflow Tests — 7 unit tests for submit/approve/reject/transfer/status.
 """
 import pytest
-from src.module_student.approval_service import submit_application, approve_application, get_application_status
-from src.common.schemas_student import ApplicationSubmitRequest
+from src.module_student.service.approval import submit_application, approve_application, get_application_status
+from src.module_student.pdcmodel.schemas import ApplicationSubmitRequest
 
 
 class TestApprovalWorkflow:

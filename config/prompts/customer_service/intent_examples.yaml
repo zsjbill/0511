@@ -1,0 +1,41 @@
+# Customer Service Agent - Intent Recognition Examples
+intents:
+  - name: "课程咨询"
+    examples:
+      - "你们有什么课程？"
+      - "我想了解一下留学方案"
+      - "澳洲留学大概要多少钱？"
+
+  - name: "报名意向"
+    examples:
+      - "我想报名"
+      - "怎么参加这个活动？"
+      - "帮我预约一下"
+
+  - name: "价格询问"
+    examples:
+      - "这个课程多少钱？"
+      - "有没有优惠活动？"
+      - "可以分期付款吗？"
+
+  - name: "投诉建议"
+    examples:
+      - "我要投诉"
+      - "服务太差了"
+      - "能不能换一个顾问？"
+
+  - name: "闲聊"
+    examples:
+      - "你好"
+      - "今天天气真好"
+      - "你是机器人吗？"
+
+  - name: "公司信息"
+    examples:
+      - "你们公司靠谱吗？"
+      - "你们做了多少年了？"
+      - "有没有成功案例？"
+
+  - name: "其他"
+    examples:
+      - "..."  # fallback

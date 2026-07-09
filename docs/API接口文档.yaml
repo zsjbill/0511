@@ -1,0 +1,116 @@
+openapi: "3.0.3"
+info:
+  title: AI-CSM-2026 API
+  description: 智能客服与学生管理系统 API 文档
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:8000
+    description: 本地开发环境
+
+paths:
+  # ---- M1: Customer Judge ----
+  /api/v1/judge/:
+    post:
+      tags: [M1 - Customer Judge]
+      summary: 客户研判打分
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CustomerJudgeRequest"
+      responses:
+        "200":
+          description: 研判结果
+
+  # ---- M2: Customer Agent ----
+  /api/v1/agent/chat:
+    post:
+      tags: [M2 - Customer Agent]
+      summary: 客服对话
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChatRequest"
+      responses:
+        "200":
+          description: 对话回复
+
+  /api/v1/agent/register:
+    post:
+      tags: [M2 - Customer Agent]
+      summary: 活动报名
+      responses:
+        "200":
+          description: 报名结果
+
+  # ---- M3: Enterprise Assistant ----
+  /api/v1/enterprise/nl2sql:
+    post:
+      tags: [M3 - Enterprise Assistant]
+      summary: NL2SQL 查询
+      responses:
+        "200":
+          description: SQL 查询结果
+
+  # ---- M4: Student Assistant ----
+  /api/v1/student/risk:
+    post:
+      tags: [M4 - Student Assistant]
+      summary: 心理风险识别
+      responses:
+        "200":
+          description: 风险评估结果
+
+  # ---- M5: Reports ----
+  /api/v1/reports/generate:
+    post:
+      tags: [M5 - Reports]
+      summary: 生成报告
+      responses:
+        "200":
+          description: 报告内容
+
+  # ---- Health ----
+  /health:
+    get:
+      tags: [System]
+      summary: 健康检查
+      responses:
+        "200":
+          description: OK
+
+components:
+  schemas:
+    APIResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+
+    CustomerJudgeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        phone:
+          type: string
+        wechat:
+          type: string
+        source:
+          type: string
+
+    ChatRequest:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+        message:
+          type: string
+        session_id:
+          type: string

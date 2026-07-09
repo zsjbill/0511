@@ -1,0 +1,45 @@
+# 数据库 ER 图
+
+## 核心表关系
+
+```
+┌─────────────┐     ┌─────────────────┐     ┌──────────────┐
+│   users     │     │   customers     │     │ conversations│
+├─────────────┤     ├─────────────────┤     ├──────────────┤
+│ id (PK)     │     │ id (PK)         │     │ id (PK)      │
+│ username    │     │ name            │     │ customer_id  │──┐
+│ email       │     │ phone           │     │ agent_id     │  │
+│ password    │     │ wechat          │     │ intent       │  │
+│ role        │◄────│ source          │     │ messages     │  │
+│ created_at  │     │ tags            │     │ status       │  │
+└─────────────┘     │ profile_score   │     │ created_at   │  │
+                    │ created_at      │     └──────────────┘  │
+                    └─────────────────┘                       │
+                           │                                  │
+                           │◄─────────────────────────────────┘
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+     ┌───────────────┐         ┌──────────────┐
+     │ registrations │         │   reports    │
+     ├───────────────┤         ├──────────────┤
+     │ id (PK)       │         │ id (PK)      │
+     │ customer_id   │         │ report_type  │
+     │ activity_name │         │ title        │
+     │ status        │         │ content      │
+     │ registered_at │         │ generated_at │
+     └───────────────┘         │ created_by   │
+                               └──────────────┘
+
+┌─────────────┐     ┌──────────────┐
+│  students   │     │  employees   │
+├─────────────┤     ├──────────────┤
+│ id (PK)     │     │ id (PK)      │
+│ name        │     │ name         │
+│ student_code│     │ department   │
+│ stage       │     │ position     │
+│ target      │     │ email        │
+│ risk_flags  │     │ status       │
+│ created_at  │     │ created_at   │
+└─────────────┘     └──────────────┘
+```

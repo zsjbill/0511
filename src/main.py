@@ -22,17 +22,17 @@ from config.logging_config import setup_logging
 from src.common.database import close_db
 
 # Enterprise module routers 企业管理模块路由
-from src.module_enterprise.api_crud import router as enterprise_crud_router
-from src.module_enterprise.api_nl2sql import router as enterprise_nl2sql_router
-from src.module_enterprise.api_tasks import router as enterprise_tasks_router
-from src.module_enterprise.api_tasks import instruction_router as enterprise_instruction_router
+from src.module_enterprise.api.crud import router as enterprise_crud_router
+from src.module_enterprise.api.nl2sql import router as enterprise_nl2sql_router
+from src.module_enterprise.api.tasks import router as enterprise_tasks_router
+from src.module_enterprise.api.tasks import instruction_router as enterprise_instruction_router
 
 # Student module routers 学生管理模块路由
-from src.module_student.api_crud import router as student_crud_router
-from src.module_student.api_application import router as student_approval_router
-from src.module_student.api_sync import router as student_sync_router
-from src.module_student.api_kb import router as student_kb_router
-from src.module_student.api_ai import router as student_ai_router
+from src.module_student.api.crud import router as student_crud_router
+from src.module_student.api.application import router as student_approval_router
+from src.module_student.api.sync import router as student_sync_router
+from src.module_student.api.kb import router as student_kb_router
+from src.module_student.api.ai import router as student_ai_router
 
 
 @asynccontextmanager
@@ -46,12 +46,12 @@ async def lifespan(app: FastAPI):
     # Start background scanners 启动后台任务扫描器
     import asyncio
     try:
-        from src.module_enterprise.task_scanner import start_scanner
+        from src.module_enterprise.service.task_scanner import start_scanner
         asyncio.create_task(start_scanner())
     except Exception:
         pass
     try:
-        from src.module_student.sync_service import start_scheduler
+        from src.module_student.service.sync import start_scheduler
         asyncio.create_task(start_scheduler())
     except Exception:
         pass
